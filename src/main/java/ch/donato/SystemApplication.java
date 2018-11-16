@@ -3,7 +3,7 @@ package ch.donato;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/system")
+@ApplicationPath("/api")
 public class SystemApplication extends Application {
 
 }
