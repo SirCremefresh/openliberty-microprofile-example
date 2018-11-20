@@ -1,22 +1,23 @@
 package ch.donato;
 
-import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
 
-import javax.annotation.Resource;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 @Path("ping")
+@RequestScoped
 public class PingResource {
 
-	@Resource(name = "mongo/sampledb")
-	private MongoClient meetings;
+	@Inject
+	MongoDBFactory mongoDBFactory;
 
 	@GET
 	public Response ping() {
-		boolean isNull =  meetings == null;
-		String som = "pong " + isNull;
-		return Response.ok(som).build();
+		MongoDatabase mongoDatabase = mongoDBFactory.get();
+		return Response.ok("ok").build();
 	}
 }
