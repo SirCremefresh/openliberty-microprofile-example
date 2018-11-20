@@ -59,7 +59,6 @@
                         <acceptLicense>true</acceptLicense>
                         <feature>microProfile-2.0</feature>
                         <feature>localConnector-1.0</feature>
-                        <feature>mongo-2.0</feature>
                     </features>
                     <looseApplication>true</looseApplication>
                     <installAppPackages>all</installAppPackages>
