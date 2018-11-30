@@ -29,5 +29,5 @@ hs_err_pid*
 .idea
 *.iml
 
-#mongo driver
-mongo/
+#Locale Liberty Installation
+liberty/wlp/

@@ -1,0 +1,1 @@
+copy /Y ".\config\server-locale.xml" "wlp\usr\servers\openliberty-microprofile-example\server.xml"
