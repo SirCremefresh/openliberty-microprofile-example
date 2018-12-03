@@ -10,4 +10,4 @@ mv "../target/liberty/wlp" "./wlp"
 
 cp -f "./config/server-locale.xml" "wlp/usr/servers/openliberty-microprofile-example/server.xml"
 
-"wlp/bin/installUtility" install microprofile-2.0
+"wlp/bin/installUtility" install microprofile-2.0 --acceptLicense
