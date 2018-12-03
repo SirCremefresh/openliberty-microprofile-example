@@ -12,7 +12,7 @@
     <applicationManager autoExpand="true"/>
     <applicationMonitor updateTrigger="mbean" />
 
-    <webApplication location="openliberty-microprofile-example.war">
+    <webApplication context-root="/" type="war" location="openliberty-microprofile-example.war">
     </webApplication>
 </server>
 
