@@ -1,6 +1,10 @@
+FROM maven:3.6.0-jdk-8-alpine as builder
+ADD pom.xml tmp/pom.xml
+ADD src tmp/src
+RUN mvn -B -f /tmp/pom.xml install
+CMD bash
+
 FROM open-liberty:microProfile2
 
-ADD mongo/mongodb-driver.jar /opt/ol/wlp/usr/shared/resources/
-
 ADD liberty/config/server.xml /config/
-ADD target/openliberty-microprofile-example.war /config/apps
+COPY --from=builder /tmp/target/openliberty-microprofile-example.war /config/apps
