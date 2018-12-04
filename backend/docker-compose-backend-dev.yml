@@ -9,7 +9,7 @@ services:
     depends_on:
       - elasticsearch
     volumes:
-      - ackend-dev-openliberty-example-apm:/usr/share/apm-server/data
+      - backend-dev-openliberty-example-apm:/usr/share/apm-server/data
   elasticsearch:
     container_name: elastic-elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:6.5.1
