@@ -15,4 +15,4 @@ elasticAgentLocation=$(pwd)"/wlp/elastic-apm-agent-1.1.0.jar"
 wget -O ${elasticAgentLocation} "https://search.maven.org/remotecontent?filepath=co/elastic/apm/elastic-apm-agent/1.1.0/elastic-apm-agent-1.1.0.jar"
 sed  "s~\${elastic-agent-location}~$elasticAgentLocation~" "wlp/usr/servers/openliberty-microprofile-example/jvm.options"
 
-"wlp/bin/installUtility" install microprofile-2.0 --acceptLicense
+"wlp/bin/installUtility" install microprofile-2.0 jpa-2.2 --acceptLicense
