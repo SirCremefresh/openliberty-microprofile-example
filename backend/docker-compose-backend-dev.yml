@@ -1,0 +1,46 @@
+version: '3.1'
+services:
+  apm:
+    container_name: elastic-apm
+    build:
+      context: ./elastic/apm
+    ports:
+      - 8200:8200
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ackend-dev-openliberty-example-apm:/usr/share/apm-server/data
+  elasticsearch:
+    container_name: elastic-elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - backend-dev-openliberty-example-elasticsearch:/usr/share/elasticsearch/data
+  kibana:
+    container_name: elastic-kibana
+    image: docker.elastic.co/kibana/kibana:6.5.1
+    environment:
+      - SERVER_NAME=kibana.example.org
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+  postgres:
+    container_name: postgres
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_USER=postroot
+    ports:
+      - 5432:5432
+    volumes:
+      - backend-dev-postgres:/var/lib/postgresql/data
+volumes:
+  backend-dev-openliberty-example-elasticsearch:
+  backend-dev-openliberty-example-apm:
+  backend-dev-postgres:
