@@ -48,6 +48,12 @@ services:
       - 5432:5432
     volumes:
       - postgres:/var/lib/postgresql/data
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    ports:
+      - 80:80
 volumes:
   openliberty-example-elasticsearch:
   openliberty-example-apm:

@@ -3,7 +3,7 @@ services:
   apm:
     container_name: elastic-apm
     build:
-      context: ./elastic/apm
+      context: ../elastic/apm
     ports:
       - 8200:8200
     depends_on:
@@ -40,6 +40,12 @@ services:
       - 5432:5432
     volumes:
       - backend-dev-postgres:/var/lib/postgresql/data
+  frontend:
+    container_name: frontend
+    build:
+      context: ../frontend
+    ports:
+      - 80:80
 volumes:
   backend-dev-openliberty-example-elasticsearch:
   backend-dev-openliberty-example-apm:
