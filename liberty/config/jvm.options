@@ -1,0 +1,4 @@
+-javaagent:/tmp/elastic-apm-agent.jar
+-Delastic.apm.service_name=openliberty-microprofile-example
+-Delastic.apm.application_packages=ch.sircremefresh
+-Delastic.apm.server_urls=http://apm:8200

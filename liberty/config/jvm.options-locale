@@ -1,0 +1,4 @@
+-javaagent:/home/donato/git/openliberty-microprofile-example/liberty/elastic-apm-agent-1.1.0.jar
+-Delastic.apm.service_name=openliberty-microprofile-example
+-Delastic.apm.application_packages=ch.sircremefresh
+-Delastic.apm.server_urls=http://localhost:8200
