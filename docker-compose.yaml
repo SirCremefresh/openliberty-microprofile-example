@@ -2,7 +2,8 @@ version: '3.1'
 services:
   app:
     container_name: openliberty-microprofile-example
-    build: ./
+    build:
+      context: ./backend
     ports:
       - 9080:9080
     depends_on:

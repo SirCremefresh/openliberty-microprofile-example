@@ -28,6 +28,3 @@ hs_err_pid*
 # IDEA
 .idea
 *.iml
-
-# Locale Liberty Installation
-liberty/wlp/
