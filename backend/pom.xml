@@ -16,8 +16,9 @@
 
         <!-- Dependencies -->
         <version.lombok>1.18.4</version.lombok>
-        <version.mongodb>3.9.0</version.mongodb>
+        <version.jpa>2.2</version.jpa>
         <version.microprofile>2.1</version.microprofile>
+        <version.transaction-api>1.2</version.transaction-api>
     </properties>
 
     <dependencies>
@@ -37,9 +38,17 @@
         </dependency>
 
         <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>${version.mongodb}</version>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>${version.jpa}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+            <version>${version.transaction-api}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
