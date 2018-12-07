@@ -1,9 +1,6 @@
 package ch.donato.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "test_table")
@@ -12,7 +9,6 @@ public class TestTableEntity {
 	public String name;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-
-
 }
